@@ -1,11 +1,19 @@
-project: default
-source:
-  repoURL: 'https://github.com/r3dact3d/argoCD.git'
-  path: base/rhacm
-  targetRevision: rhacm
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: open-cluster-management
-syncPolicy:
-  automated:
-    selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: RHACM
+spec:
+  destination:
+    name: ''
+    namespace: open-cluster-management
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: base/rhacm
+    repoURL: '''https://github.com/r3dact3d/argoCD.git'''
+    targetRevision: rhacm
+  project: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
