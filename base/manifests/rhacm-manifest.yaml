@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: RHACM
+  name: rhacm
 spec:
   destination:
     name: ''
@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: base/rhacm
-    repoURL: '''https://github.com/r3dact3d/argoCD.git'''
+    repoURL: 'https://github.com/r3dact3d/argoCD.git'
     targetRevision: rhacm
   project: default
   syncPolicy:
