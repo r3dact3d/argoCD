@@ -12,7 +12,7 @@ spec:
     repoURL: 'https://github.com/r3dact3d/argoCD.git'
     targetRevision: rhacm
     directory:
-      recurse: true
+      recurse: false
   project: default
   syncPolicy:
     automated:
